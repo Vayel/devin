@@ -47,7 +47,7 @@ hr.line {
   margin: 10px auto;
 }
 hr.light {
-  color: #60ae60;
+  color: #61c261;
 }
 hr.dark {
   color: #2d502d;
@@ -142,7 +142,7 @@ header .intro-text .skills {
   color: white;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: #60ae60;
+  color: #61c261;
   outline: none;
 }
 .navbar-custom .navbar-nav li a:focus,
@@ -150,13 +150,13 @@ header .intro-text .skills {
   color: white;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: #60ae60;
+  color: #61c261;
   background: transparent;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: #60ae60;
+  color: #61c261;
   background: transparent;
 }
 .navbar-custom .navbar-toggle {
@@ -203,11 +203,11 @@ section.success {
   color: #FFF;
 }
 section.light {
-  background: #60ae60; /*#77db77;*/
+  background: #61c261; /*#77db77;*/
   color: #333;
 }
 section.dark {
-  background: #60ae60;
+  background: #61c261;
   color: #FFF;
 }
 section.dark h2 {
@@ -284,7 +284,7 @@ footer {
 }
 footer h3 {
   margin-bottom: 30px;
-  color: #60ae60;
+  color: #61c261;
 }
 footer .footer-above {
   padding-top: 20px;
@@ -445,7 +445,7 @@ fieldset[disabled] .btn-success.active {
 }
 
 .step-description strong {
-  color: #60ae60;
+  color: #61c261;
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   
