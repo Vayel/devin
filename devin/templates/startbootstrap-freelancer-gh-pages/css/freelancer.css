@@ -81,7 +81,7 @@ hr.star-primary:after {
 }
 header {
   text-align: center;
-  background: #333; /* url('../img/seigaiha/seigaiha_alpha.png'); */
+  background: #333;
   color: #FFF;
 }
 header .container {
@@ -287,14 +287,14 @@ footer h3 {
   color: #60ae60;
 }
 footer .footer-above {
-  padding-top: 50px;
+  padding-top: 20px;
   background-color: #333;
 }
 footer .footer-col {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 footer .footer-below {
-  padding: 25px 0;
+  padding: 10px 0;
   background-color: #333;
 }
 footer strong {
