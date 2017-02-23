@@ -434,9 +434,34 @@ fieldset[disabled] .btn-success.active {
   outline: none;
 }
 
-#steps-list h3 {
-  margin-bottom: 30px;
+#steps-list .nav-tabs {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#steps-list li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
   color: #FFF;
+  list-style-type: none;
+  background: none;
+}
+
+#steps-list a {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: none;
+  border: none;
+}
+
+#steps-list li.active a {
+  color: #3d6f3d;
 }
 
 .step-description {
@@ -448,5 +473,4 @@ fieldset[disabled] .btn-success.active {
   color: #61c261;
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  
 }
