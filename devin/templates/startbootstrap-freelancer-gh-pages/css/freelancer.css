@@ -335,3 +335,35 @@ footer strong {
   text-transform: uppercase;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+#offer-table {
+  margin: 20px auto;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: none;
+}
+
+#offer-table td, 
+#offer-table th {
+  background: #333;
+  border-color: #3d6f3d;
+  padding: 10px;
+}
+
+#offer-table strong {
+  color: #61c261;
+}
+
+#offer-table th {
+  text-align: center;
+  color: #3d6f3d;
+}
+
+#offer-table .empty td {
+  color: transparent;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
