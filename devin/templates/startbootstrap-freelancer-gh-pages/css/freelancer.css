@@ -123,18 +123,18 @@ header .intro-text .skills {
   font-weight: 700;
   border: none;
 }
-.navbar-custom .navbar-brand {
-  color: white;
-}
 .navbar-custom .navbar-brand.active {
   color: white;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
+.navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav li a {
   color: white;
 }
+.navbar-custom a.navbar-brand:hover,
+.navbar-custom a.navbar-brand:focus,
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:hover {
   color: #61c261;
