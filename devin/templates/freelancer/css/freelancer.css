@@ -361,6 +361,8 @@ footer strong {
   color: #3d6f3d;
 }
 
+#offer-table th.empty,
+#offer-table td.empty,
 #offer-table .empty td {
   color: transparent;
   background: transparent;
@@ -374,4 +376,13 @@ footer strong {
 
 #offer-table .step-name {
   cursor: pointer;
+}
+
+#offer-table select {
+  background: transparent;
+  border: 1px solid #3d6f3d;
+}
+
+#offer-table input[type="text"] {
+  color: #333;
 }
