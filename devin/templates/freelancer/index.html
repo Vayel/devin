@@ -141,7 +141,7 @@
 
                   <p><strong>Prix :</strong> 680 &euro;</p>
 
-                  <p><strong>Priorité :</strong> 10/10</p>
+                  <p><strong>Priorité :</strong> 9/10</p>
                 </div>
                 <div class="col-lg-6">
                   <p>
@@ -180,43 +180,53 @@
                   <table id="offer-table" class="table-bordered">
                     <tr>
                       <th>Phase</th>
+                      <th>Priorité</th>
                       <th>Montant</th>
                     </tr>
                     <tr>
-                      <td>Analyse des outils</td>
+                      <td data-step="analyse-des-outils" class="step-name">Analyse des outils</td>
+                      <td>10</td>
                       <td class="text-right">340 &euro; H.T.</td>
                     </tr>
                     <tr>
-                      <td>Conception de l'interface</td>
+                      <td data-step="conception-de-linterface" class="step-name">Conception de l'interface</td>
+                      <td>9</td>
                       <td class="text-right">680 &euro; H.T.</td>
                     </tr>
                     <tr class="empty">
                       <td>_</td>
                       <td></td>
+                      <td></td>
                     </tr>
                     <tr>
                       <td class="text-right">Sous-total réalisation de l'étude</td>
-                      <td class="text-right">1020 &euro; H.T.</td>
+                      <td>-</td>
+                      <td id="steps-price" class="text-right">1020 &euro; H.T.</td>
                     </tr>
                     <tr>
                       <td class="text-right">Frais de dossier</td>
+                      <td>-</td>
                       <td class="text-right">80 &euro; H.T.</td>
                     </tr>
                     <tr>
                       <td class="text-right"><strong>Total hors taxes</strong></td>
-                      <td class="text-right">1100 &euro; H.T.</td>
+                      <td>-</td>
+                      <td id="excluding-taxe-price" class="text-right">1100 &euro; H.T.</td>
                     </tr>
                     <tr class="empty">
                       <td>_</td>
                       <td></td>
+                      <td></td>
                     </tr>
                     <tr>
                       <td class="text-right">TVA</td>
-                      <td class="text-right">XXX &euro;</td>
+                      <td>-</td>
+                      <td id="vat" class="text-right">XXX &euro;</td>
                     </tr>
                     <tr>
                       <td class="text-right"><strong>Total</strong></td>
-                      <td class="text-right">YYY &euro; T.T.C.</td>
+                      <td>-</td>
+                      <td id="total-price" class="text-right">YYY &euro; T.T.C.</td>
                     </tr>
                   </table>
                 </div>
@@ -285,6 +295,8 @@
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
 
-</body>
+    <!-- Offer edition -->
+    <script src="js/offer-edition.js"></script>
 
+</body>
 </html>

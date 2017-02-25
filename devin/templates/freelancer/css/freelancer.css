@@ -367,3 +367,11 @@ footer strong {
   border: none;
   padding: 0;
 }
+
+#offer-table .excluded td {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+#offer-table .step-name {
+  cursor: pointer;
+}
