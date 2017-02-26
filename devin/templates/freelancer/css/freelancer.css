@@ -163,6 +163,10 @@ header .intro-text .skills {
   background-color: #61c261;
   color: white;
 }
+nav .brand-name {
+  color: #61c261;
+}
+  color: #61c261;
 @media (min-width: 768px) {
   .navbar-custom {
     padding: 10px 0;
