@@ -1,4 +1,4 @@
-(function() {
+$(document).ready(function() {
   var steps = {
     'analyse-des-outils': {
       'included': true,
@@ -120,4 +120,10 @@
   $.each(steps, function(name, step) {
     $('#offer-table select[data-step="' + name + '"]').val(step.priority).attr('selected', 'selected');
   });
-})();
+
+  // Tooltips
+  $('[data-toggle="tooltip"]').tooltip('show');
+  $('.tooltip').hover(function() {
+    $(this).prev().tooltip('hide');
+  });
+});

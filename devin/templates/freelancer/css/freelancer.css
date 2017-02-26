@@ -365,6 +365,32 @@ footer strong {
   color: #3d6f3d;
 }
 
+#offer-table a[data-toggle="tooltip"] {
+  text-decoration:none;
+  cursor: default;
+  color: white;
+}
+
+#offer-table th a[data-toggle="tooltip"] {
+  color: #3d6f3d;
+}
+
+#offer-table .tooltip.in {
+  opacity: 1;
+}
+
+#offer-table .tooltip-inner {
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #333;
+  background-opacity: 1;
+  border-radius: 0;
+  border: 1px solid #3d6f3d;
+  opacity: 1;
+}
+
 #offer-table th.empty,
 #offer-table td.empty,
 #offer-table .empty td {
