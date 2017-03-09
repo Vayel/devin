@@ -67,9 +67,9 @@
                 <div class="col-lg-12">
                     <img class="img-responsive" src="img/profile.png" alt="Logo Nsigma Junior Entreprise">
                     <div class="intro-text">
-                        <span class="name">Application mobile de saisie</span>
+                        <span class="name">{{ title }}</span>
                         <hr class="line light"></hr>
-                        <span class="skills">Devis #1 - 23/02/17</span>
+                        <span class="skills">Devis #{{ version }} - {{ date }}</span>
                     </div>
                 </div>
             </div>
@@ -87,10 +87,10 @@
             </div>
             <div class="row" id="objectives-description">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipiscing <strong>elit</strong>. Fusce molestie magna at <strong>enim gravida</strong>, sed finibus purus condimentum. Sed luctus tortor vitae enim <strong>sollicitudin</strong>, nec sollicitudin nisl fringilla. Maecenas nisi quam, sagittis vel consectetur at, pulvinar nec enim. Proin ullamcorper <strong>elementum bibendum</strong>.</p>
+                    <p>{{ objectives_left }}</p>
                 </div>
                 <div class="col-lg-4">
-                    <p>Fusce laoreet <strong>bibendum</strong> erat sed imperdiet. Nunc consequat turpis aliquam lorem <strong>egestas</strong>, et lobortis lectus condimentum. Proin vestibulum risus lorem, ac dapibus augue mollis eget. Quisque <strong>in molestie lacus</strong>, sed condimentum elit. Duis hendrerit eget eros id volutpat.</p>
+                    <p>{{ objectives_right }}</p>
                 </div>
             </div>
         </div>
@@ -106,14 +106,15 @@
                 </div>
             </div>
             <div class="row">
-              <h3>Analyse des outils</h3>
+            {% for name, step in steps.items() %}
+              <h3>{{ name }}</h3>
               <div class="step-description col-lg-12">
                 <div class="col-lg-6">
-                  <p><strong>Objectifs :</strong> Objectifs de l'analyse.</p>
+                  <p><strong>Objectifs :</strong> {{ step.objectives }}</p>
 
-                  <p><strong>Prix :</strong> 340 &euro;</p>
+                  <p><strong>Prix :</strong> {{ step.price }} &euro;</p>
 
-                  <p><strong>Priorité :</strong> 20/20</p>
+                  <p><strong>Priorité :</strong> {{ step.priority }}/20</p>
                 </div>
                 <div class="col-lg-6">
                   <p>
@@ -121,47 +122,21 @@
                   </p>
                   <div class="col-lg-6">
                     <ul>
-                      <li>blabla</li>
-                      <li>blabla</li>
+                    {% for feature in step.features_left %}
+                      <li>{{ feature }}</li>
+                    {% endfor %}
                     </ul>
                   </div>
                   <div class="col-lg-6">
                     <ul>
-                      <li>blabla</li>
-                      <li>blabla</li>
+                    {% for feature in step.features_right %}
+                      <li>{{ feature }}</li>
+                    {% endfor %}
                     </ul>
                   </div>
                 </div>
               </div>
-              
-              <h3>Conception de l'interface</h3>
-              <div class="step-description col-lg-12">
-                <div class="col-lg-6">
-                  <p><strong>Objectifs :</strong> Objectifs de l'interface.</p>
-
-                  <p><strong>Prix :</strong> 680 &euro;</p>
-
-                  <p><strong>Priorité :</strong> 19/20</p>
-                </div>
-                <div class="col-lg-6">
-                  <p>
-                    <strong>Fonctionnalités :</strong>
-                  </p>
-                  <div class="col-lg-6">
-                    <ul>
-                      <li>blabla</li>
-                      <li>blabla</li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-6">
-                    <ul>
-                      <li>blabla</li>
-                      <li>blabla</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
+            {% endfor %} 
             </div>
         </div>
     </section>
@@ -184,66 +159,20 @@
                       <th>Montant</th>
                       <th class="empty"></th>
                     </tr>
+                    {% for name, step in steps.items() %}
                     <tr>
-                      <td data-step="analyse-des-outils" class="step-name">Analyse des outils</td>
+                      <td data-step="{{ step.slug }}" class="step-name">{{ name }}</td>
                       <td>
-                        <select data-step="analyse-des-outils">
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                          <option value="13">13</option>
-                          <option value="14">14</option>
-                          <option value="15">15</option>
-                          <option value="16">16</option>
-                          <option value="17">17</option>
-                          <option value="18">18</option>
-                          <option value="19">19</option>
-                          <option value="20" selected="selected">20</option>
+                        <select data-step="{{ step.slug }}">
+                          {% for i in range(max_prio+1) %}
+                            <option value="{{ i }}" {% if i == step.priority %}selected="selected"{% endif %}>{{ i }}</option>
+                          {% endfor %}
                         </select>
                       </td>
-                      <td class="text-right">340 &euro; H.T.</td>
+                      <td class="text-right">{{ step.price }} &euro; H.T.</td>
                       <td class="empty"></td>
                     </tr>
-                    <tr>
-                      <td data-step="conception-de-linterface" class="step-name">Conception de l'interface</td>
-                      <td>
-                        <select data-step="conception-de-linterface">
-                          <option value="0">0</option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                          <option value="6">6</option>
-                          <option value="7">7</option>
-                          <option value="8">8</option>
-                          <option value="9">9</option>
-                          <option value="10">10</option>
-                          <option value="11">11</option>
-                          <option value="12">12</option>
-                          <option value="13">13</option>
-                          <option value="14">14</option>
-                          <option value="15">15</option>
-                          <option value="16">16</option>
-                          <option value="17">17</option>
-                          <option value="18">18</option>
-                          <option value="19" selected="selected">19</option>
-                          <option value="20">20</option>
-                        </select>
-                      </td>
-                      <td class="text-right">680 &euro; H.T.</td>
-                      <td class="empty"></td>
-                    </tr>
+                    {% endfor %}
                     <tr class="empty">
                       <td>_</td>
                       <td></td>
@@ -253,19 +182,19 @@
                     <tr>
                       <td class="text-right">Sous-total réalisation de l'étude</td>
                       <td>-</td>
-                      <td id="steps-price" class="text-right">1020 &euro; H.T.</td>
+                      <td id="steps-price" class="text-right">{{ steps_price }} &euro; H.T.</td>
                       <td class="empty"></td>
                     </tr>
                     <tr>
                       <td class="text-right">Frais de dossier</td>
                       <td>-</td>
-                      <td class="text-right">80 &euro; H.T.</td>
+                      <td class="text-right">{{ fees }} &euro; H.T.</td>
                       <td class="empty"></td>
                     </tr>
                     <tr>
                       <td class="text-right"><strong>Total hors taxes</strong></td>
                       <td>-</td>
-                      <td id="excluding-taxe-price" class="text-right">1100 &euro; H.T.</td>
+                      <td id="excluding-taxe-price" class="text-right">{{ excluding_taxes_price }} &euro; H.T.</td>
                       <td>
                         <label for="max-price-input"><a href="#" data-toggle="tooltip" title="Fixer une limite de prix sélectionne par ordre de priorité les phases dont la somme des montants est inférieure à cette limite. Ce champ vide, toutes les phases sont incluses.">Max</a> :</label>
                         <input type="text" size="4" id="max-price-input" class="text-right"></input>
@@ -280,13 +209,13 @@
                     <tr>
                       <td class="text-right">TVA</td>
                       <td>-</td>
-                      <td id="vat" class="text-right">XXX &euro;</td>
+                      <td id="vat" class="text-right">{{ vat }} &euro;</td>
                       <td class="empty"></td>
                     </tr>
                     <tr>
                       <td class="text-right"><strong>Total</strong></td>
                       <td>-</td>
-                      <td id="total-price" class="text-right">YYY &euro; T.T.C.</td>
+                      <td id="total-price" class="text-right">{{ total_price }} &euro; T.T.C.</td>
                       <td class="empty"></td>
                     </tr>
                   </table>
@@ -357,7 +286,134 @@
     <script src="js/freelancer.min.js"></script>
 
     <!-- Offer edition -->
-    <script src="js/offer-edition.js"></script>
+    <script>
+      $(document).ready(function() {
+        var steps = {
+          {% for name, step in steps.items() %}
+          '{{ step.slug }}': {
+            'included': true,
+            'price': {{ step.price }},
+            'priority': {{ step.priority }},
+          },
+          {% endfor %}
+        };
+        var fees = {{ fees }};
+        var maxPrice = null;
+
+        function computeStepsPrice() {
+          var price = 0;
+
+          $.each(steps, function(name, step) {
+            if(step.included) {
+              price += step.price;
+            }
+          });
+
+          return price;
+        }
+
+        function changeStepInclusion(cellStep, included) {
+          var step = cellStep.data('step');
+          steps[step]['included'] = included;
+          if(included) {
+            cellStep.parent().removeClass('excluded');
+          } else {
+            cellStep.parent().addClass('excluded');
+          }
+          updatePrices();
+        }
+
+        function updatePrices() {
+          var stepsPrice = computeStepsPrice();
+          var excludingTaxePrice = stepsPrice + fees;
+          var vat = 0.2 * excludingTaxePrice;
+          var totalPrice = excludingTaxePrice + vat;
+
+          $('#steps-price').html(stepsPrice + ' &euro; H.T.');
+          $('#excluding-taxe-price').html(excludingTaxePrice + ' &euro; H.T.');
+          $('#vat').html(vat + ' &euro;');
+          $('#total-price').html(totalPrice + ' &euro; T.T.C.');
+        }
+
+        function changeStepPriority(step, priority) {
+          steps[step].priority = priority;
+          updateMaxPrice(maxPrice);
+        }
+
+        function includeAllSteps() {
+          $.each(steps, function(name, step) {
+            changeStepInclusion(getStepCell(name), true);
+          });
+        }
+
+        function getStepCell(step) {
+          return $('#offer-table td[data-step="' + step + '"]');
+        }
+
+        function stepsToArray() {
+          var array = [];
+
+          $.each(steps, function(name, step) {
+            step.name = name;
+            array.push(step);
+          });
+
+          return array;
+        }
+
+        function getStepsOrderedByPrio() {
+          var array = stepsToArray();
+          array.sort(function(a, b) {
+              return b.priority - a.priority; // Sort in descending order
+          });
+          return array;
+        }
+
+        function updateMaxPrice(price) {
+          maxPrice = price;
+          var remainingPrice = maxPrice - fees;
+
+          if(isNaN(maxPrice)) {
+            includeAllSteps();
+            return;
+          }
+
+          var step, orderedSteps = getStepsOrderedByPrio();
+          for(step of orderedSteps) {
+            remainingPrice -= step.price;
+            changeStepInclusion(getStepCell(step.name), remainingPrice >= 0);
+          }
+        }
+
+        $('#offer-table .step-name').click(function() {
+          changeStepInclusion($(this), !steps[$(this).data('step')]['included']);
+        });
+
+        $('#offer-table select').change(function() {
+          changeStepPriority($(this).data('step'), $(this).children('option:selected').text());
+        });
+
+        $('#max-price-input').change(function() {
+          updateMaxPrice(parseFloat($(this).val()));
+        });
+
+        $('#max-price-input').focusout(function() {
+          updateMaxPrice(parseFloat($(this).val()));
+        });
+
+        // Init forms
+        $('#max-price-input').val('');
+        $.each(steps, function(name, step) {
+          $('#offer-table select[data-step="' + name + '"]').val(step.priority).attr('selected', 'selected');
+        });
+
+        // Tooltips
+        $('[data-toggle="tooltip"]').tooltip('show');
+        $('.tooltip').hover(function() {
+          $(this).prev().tooltip('hide');
+        });
+      });
+    </script>
 
 </body>
 </html>
