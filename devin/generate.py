@@ -3,6 +3,8 @@ import os
 from slugify import slugify
 from jinja2 import Template
 
+from pyexcel_ods import get_data
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(HERE, 'templates', 'index.html')
 OUTPUT_PATH = os.path.join(HERE, 'templates', 'output.html')
@@ -42,7 +44,50 @@ def generate(*args, **kwargs):
         f.write(template.render(*args, **kwargs))
 
 
+def get_last_step_row(sheet):
+    i = 1
+    for row in sheet:
+        if not row:
+            return i-1
+        i += 1
+
+
+def price_to_int(price):
+    return int(price.split(' ')[0])
+
+
+def ods_to_params(path):
+    params = {}
+    doc = get_data(path)
+    sheet = doc['Phases']
+    last_step_row = get_last_step_row(sheet)
+    steps = sheet[1:last_step_row]
+
+    params['steps'] = {}
+    for step in steps:
+        params['steps'][step[0]] = {
+            'objectives': step[4],
+            'price': price_to_int(step[2]),
+            'priority': step[5],
+            'features': step[6].split('\n'),
+        }
+    params['fees'] = price_to_int(sheet[last_step_row + 3][3])
+    params['title'] = doc['DEV'][1][4]
+    params['version'] = doc['DEV'][1][3]
+    params['date'] = doc['DEV'][1][8].strftime('%d/%m/%y')
+    params['objectives_left'] = doc['DEV'][1][11]
+    params['objectives_right'] = doc['DEV'][1][12]
+
+    return params
+
+
 if __name__ == '__main__':
+    params = ods_to_params(os.path.join(HERE, 'params.ods'))
+    params['max_prio'] = 20
+    generate(**params)
+
+    import sys
+    sys.exit()
     generate(
         title='Application mobile de saisie',
         version=1,
