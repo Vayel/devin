@@ -71,7 +71,7 @@ def ods_to_params(path):
             'priority': step[5],
             'features': step[6].split('\n'),
         }
-    params['fees'] = price_to_int(sheet[last_step_row + 3][3])
+    params['fees'] = price_to_int(sheet[last_step_row + 2][3])
     params['title'] = doc['DEV'][1][4]
     params['version'] = doc['DEV'][1][3]
     params['date'] = doc['DEV'][1][8].strftime('%d/%m/%y')
