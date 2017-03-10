@@ -12,13 +12,435 @@
     <title>Devis Nsigma</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Theme CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <!--<link href="css/freelancer.css" rel="stylesheet">-->
+    <style>
+    
+/*!
+ * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+p {
+  font-size: 20px;
+}
+p.small {
+  font-size: 16px;
+}
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: #18BC9C;
+  outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+hr.line,
+hr.star-light,
+hr.star-primary {
+  padding: 0;
+  border: none;
+  border-top: solid 5px;
+  text-align: center;
+  max-width: 250px;
+  margin: 25px auto 30px;
+}
+hr.line {
+  border-top: solid 2px;
+  margin: 10px auto;
+}
+hr.light {
+  color: #61c261;
+}
+hr.dark {
+  color: #2d502d;
+}
+hr.star-light:after,
+hr.star-primary:after {
+  content: "\f005";
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 2em;
+  padding: 0 0.25em;
+}
+hr.star-light {
+  border-color: #000;
+}
+hr.star-light:after {
+  background-color: #FFF;
+  color: #000;
+}
+hr.star-primary {
+  border-color: #2C3E50;
+}
+hr.star-primary:after {
+  background-color: white;
+  color: #2C3E50;
+}
+.img-centered {
+  margin: 0 auto;
+}
+header {
+  text-align: center;
+  background: #333;
+  color: #FFF;
+}
+header .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+header img {
+  display: block;
+  margin: 0 auto 20px;
+}
+header .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+  font-variant: small-caps;
+}
+@media (min-width: 768px) {
+  header .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  header .intro-text .name {
+    font-size: 4.75em;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+.navbar-custom {
+  background: #333;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+}
+.navbar-custom .navbar-brand.active {
+  color: white;
+}
+.navbar-custom .navbar-nav {
+  letter-spacing: 1px;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav li a {
+  color: white;
+}
+.navbar-custom a.navbar-brand:hover,
+.navbar-custom a.navbar-brand:focus,
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:hover {
+  color: #61c261;
+  outline: none;
+}
+.navbar-custom .navbar-nav li.active a {
+  color: #61c261;
+  background: transparent;
+}
+.navbar-custom .navbar-nav li a:focus,
+.navbar-custom .navbar-nav li a:active,
+.navbar-custom .navbar-nav li.active a:hover,
+.navbar-custom .navbar-nav li.active a:focus,
+.navbar-custom .navbar-nav li.active a:active {
+  color: #61c261;
+  background: transparent;
+}
+.navbar-custom .navbar-toggle {
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-color: white;
+}
+.navbar-custom .navbar-toggle:hover,
+.navbar-custom .navbar-toggle:focus {
+  background-color: #61c261;
+  color: white;
+}
+nav .brand-name {
+  color: #61c261;
+}
+  color: #61c261;
+@media (min-width: 768px) {
+  .navbar-custom {
+    padding: 10px 0;
+    -webkit-transition: padding 0.3s;
+    -moz-transition: padding 0.3s;
+    transition: padding 0.3s;
+  }
+  .navbar-custom .navbar-brand {
+    font-size: 2em;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  .navbar-custom.affix {
+    padding: 10px 0;
+  }
+  .navbar-custom.affix .navbar-brand {
+    font-size: 1.5em;
+  }
+}
+section {
+  padding: 50px 0;
+}
+section h2 {
+  margin: 0;
+  font-size: 3em;
+}
+section.success {
+  background: #18BC9C;
+  color: #FFF;
+}
+section.dark {
+  background: #61c261;
+  color: #FFF;
+}
+section.dark h2 {
+  color: #2d502d;
+}
+
+section strong {
+  color: #3d6f3d;
+}
+
+section h3 {
+  color: #3d6f3d;
+}
+
+@media (max-width: 767px) {
+  section {
+    padding: 75px 0;
+  }
+  section.first {
+    padding-top: 75px;
+  }
+}
+footer {
+  color: white;
+}
+footer h3 {
+  margin-bottom: 30px;
+  color: #61c261;
+}
+footer .footer-above {
+  padding-top: 20px;
+  background-color: #333;
+}
+footer .footer-col {
+  margin-bottom: 20px;
+}
+footer .footer-below {
+  padding: 10px 0;
+  background-color: #333;
+}
+footer strong {
+  color: #3d6f3d;
+}
+.btn-outline {
+  color: white;
+  font-size: 20px;
+  border: solid 2px white;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+  margin-top: 15px;
+}
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+  color: #333;
+  background: white;
+  border: solid 2px white;
+}
+.btn-social {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 2px solid white;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+}
+.btn:focus,
+.btn:active,
+.btn.active {
+  outline: none;
+}
+.scroll-top {
+  position: fixed;
+  right: 2%;
+  bottom: 2%;
+  width: 50px;
+  height: 50px;
+  z-index: 1049;
+}
+.scroll-top .btn {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  line-height: 28px;
+}
+.scroll-top .btn:focus {
+  outline: none;
+}
+
+#steps-list .nav-tabs {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+#steps-list li {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  color: #FFF;
+  list-style-type: none;
+  background: none;
+}
+
+#steps-list a {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background: none;
+  border: none;
+}
+
+#steps-list li.active a,
+#steps-list a:focus {
+  color: #3d6f3d;
+}
+
+.step-description {
+  background: #333;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.step-description li {
+  font-size: 20px;
+}
+
+.step-description strong {
+  color: #61c261;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#offer-table {
+  margin: 20px auto;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: none;
+}
+
+#offer-table td, 
+#offer-table th {
+  background: #333;
+  border-color: #3d6f3d;
+  padding: 10px;
+}
+
+#offer-table strong {
+  color: #61c261;
+}
+
+#offer-table th {
+  text-align: center;
+  color: #3d6f3d;
+}
+
+#offer-table a[data-toggle="tooltip"] {
+  text-decoration:none;
+  cursor: default;
+  color: white;
+}
+
+#offer-table th a[data-toggle="tooltip"] {
+  color: #3d6f3d;
+}
+
+#offer-table .tooltip.in {
+  opacity: 1;
+}
+
+#offer-table .tooltip-inner {
+  color: white;
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #333;
+  background-opacity: 1;
+  border-radius: 0;
+  border: 1px solid #3d6f3d;
+  opacity: 1;
+}
+
+#offer-table th.empty,
+#offer-table td.empty,
+#offer-table .empty td {
+  color: transparent;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+#offer-table .excluded td {
+  color: rgba(255, 255, 255, 0.1);
+}
+
+#offer-table .step-name {
+  cursor: pointer;
+}
+
+#offer-table select {
+  background: transparent;
+  border: 1px solid #3d6f3d;
+}
+
+#offer-table input[type="text"] {
+  color: #333;
+}
+    </style>
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href=" https://opensource.keycdn.com/fontawesome/4.7.0/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -28,7 +450,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
 <body id="page-top" class="index">
@@ -274,16 +695,29 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <!--<script src="vendor/jquery/jquery.min.js"></script>-->
+    <script
+			  src="http://code.jquery.com/jquery-3.1.1.min.js"
+			  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="vendor/bootstrap/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
     <!-- Theme JavaScript -->
-    <script src="js/freelancer.min.js"></script>
+    <!--<script src="js/freelancer.min.js"></script>-->
+    <script>
+/*!
+ * Start Bootstrap - Freelancer v3.3.7+1 (http://startbootstrap.com/template-overviews/freelancer)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+!function(o){"use strict";o(".page-scroll a").bind("click",function(t){var l=o(this);o("html, body").stop().animate({scrollTop:o(l.attr("href")).offset().top-50},1250,"easeInOutExpo"),t.preventDefault()}),o("body").scrollspy({target:".navbar-fixed-top",offset:51}),o(".navbar-collapse ul li a").click(function(){o(".navbar-toggle:visible").click()}),o("#mainNav").affix({offset:{top:100}}),o(function(){o("body").on("input propertychange",".floating-label-form-group",function(t){o(this).toggleClass("floating-label-form-group-with-value",!!o(t.target).val())}).on("focus",".floating-label-form-group",function(){o(this).addClass("floating-label-form-group-with-focus")}).on("blur",".floating-label-form-group",function(){o(this).removeClass("floating-label-form-group-with-focus")})})}(jQuery);
+    </script>
 
     <!-- Offer edition -->
     <script>
