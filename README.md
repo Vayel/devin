@@ -5,7 +5,7 @@ Des devis interactifs pour Nsigma Junior Entreprise
 ## Install
 
 ```bash
-pip install python-slugify jinja2 pyexcel-ods
+pip3 install python-slugify jinja2 pyexcel-ods
 ```
 
 ## Run
@@ -14,6 +14,6 @@ pip install python-slugify jinja2 pyexcel-ods
 
 ```bash
 cd devin
-python generate.py
+python3 generate.py
 firefox output.html
 ```
