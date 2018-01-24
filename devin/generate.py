@@ -7,7 +7,7 @@ from pyexcel_ods import get_data
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_PATH = os.path.join(HERE, 'templates', 'index.html')
-OUTPUT_PATH = os.path.join(HERE, 'templates', 'output.html')
+OUTPUT_PATH = os.path.join(HERE, 'output.html')
 
 
 def split_features(steps):
